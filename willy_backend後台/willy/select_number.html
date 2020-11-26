@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <link rel="shortcut icon" href="./img/favicon_willy.png" type="image/x-icon">
+    <title>168 online_web後台系統</title>
+    <link href="/css/modern.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="splash">
+      <div class="splash-icon"></div>
+    </div>
+    <div id="root">
+      <div class="wrapper">
+        <nav class="sidebar">
+          <div class="sidebar-content">
+
+            <!--Logo以及後台名稱-->
+            <div class="sidebar-user">
+              <img alt="Linda Miller" class="img-fluid mb-2" src="./img/logo.png">
+              <div class="font-weight-bold">168 online_web 後台系統</div>
+            </div>
+            <!--Logo以及後台名稱-->
+
+            <!--menu-->
+            <ul class="sidebar-nav">
+              <li class="sidebar-header">Menu</li>
+              <li class="sidebar-item bor-btm-c3">
+                <a class="sidebar-link" href="./number_up.html">
+                  <img class="svg-inline--fa fa-book fa-w-14 fa-fw align-middle mr-2" src="./img/angle-double-up-solid.svg" alt="">
+                  <span class="align-middle fs-2rem">上分系統</span>
+                </a>
+              </li>
+              <li class="sidebar-item bor-btm-c3">
+                <a class="sidebar-link" href="./number_down.html">
+                  <img class="svg-inline--fa fa-book fa-w-14 fa-fw align-middle mr-2" src="./img/angle-double-down-solid.svg" alt=""> 
+                  <span class="align-middle fs-2rem">下分系統</span>
+                </a>
+              </li>
+              <li class="sidebar-item bor-btm-c3">
+                <a class="sidebar-link" href="./work_number_up.html">
+                  <img class="svg-inline--fa fa-book fa-w-14 fa-fw align-middle mr-2" src="./img/network-wired-solid.svg" alt=""> 
+                  <span class="align-middle fs-2rem">上班上分</span>
+                </a>
+              </li>
+              <li class="sidebar-item bor-btm-c3">
+                <a class="sidebar-link" href="./work_number_down.html">
+                  <img class="svg-inline--fa fa-book fa-w-14 fa-fw align-middle mr-2" src="./img/network-wired-solid.svg" alt=""> 
+                  <span class="align-middle fs-2rem">下班結帳</span>
+                </a>
+              </li>
+              <li class="sidebar-item bor-btm-c3">
+                <a class="sidebar-link" href="./select_number.html">
+                  <img class="svg-inline--fa fa-book fa-w-14 fa-fw align-middle mr-2" src="./img/list-alt-regular.svg" alt="">  
+                  <span class="align-middle fs-2rem text-danger">查帳</span>
+                </a>
+              </li>
+              <li class="sidebar-item bor-btm-c3">
+                <a class="sidebar-link" href="./password_set.html">
+                  <img class="svg-inline--fa fa-book fa-w-14 fa-fw align-middle mr-2" src="./img/cog-solid.svg" alt=""> 
+                  <span class="align-middle fs-2rem">修改密碼</span>
+                </a>
+              </li>
+              <!-- <li class="sidebar-item bor-btm-c3">
+                <a class="sidebar-link" href="./distance_number_up.html">
+                  <img class="svg-inline--fa fa-book fa-w-14 fa-fw align-middle mr-2" src="./img/laptop-solid.svg" alt=""> 
+                  <span class="align-middle fs-2rem">遠端上分</span>
+                </a>
+              </li>
+              <li class="sidebar-item bor-btm-c3">
+                <a class="sidebar-link" href="./distance_number_down.html">
+                  <img class="svg-inline--fa fa-book fa-w-14 fa-fw align-middle mr-2" src="./img/laptop-solid.svg" alt=""> 
+                  <span class="align-middle fs-2rem">遠端下分</span>
+                </a>
+              </li> -->
+              <li class="sidebar-item bor-btm-c3">
+                <a class="sidebar-link" href="./Revenue.html">
+                  <img class="svg-inline--fa fa-book fa-w-14 fa-fw align-middle mr-2" src="./img/coins-solid.svg" alt=""> 
+                  <span class="align-middle fs-2rem">營收</span>
+                </a>
+              </li>
+            </ul>
+            <!--menu-->
+
+          </div>
+        </nav>
+        <div class="main">
+
+          <!--選單收合-->
+          <nav class="navbar-theme navbar navbar-expand margin-top">
+            <span class="sidebar-toggle d-flex mr-2"><i class="hamburger align-self-center"></i></span>
+          </nav>
+          <!--選單收合-->
+
+          <!--查帳-->
+          <div class="content">
+            <div class="container-fluid">
+              <div class="header">
+                <h1 class="header-title">查帳</h1>
+              </div>
+              <div class="row">
+                <div class="col-md-9 col-xl-10">
+
+                  <!--查詢項目搜尋列表-->
+                  <div class="card">
+                    <div class="card-body">
+                      <form class="">
+                        <div class="row">
+                          <div class="col-md-10">
+                            <div class="form-group">
+                              <label class="money_style">帳號</label>
+                              <select name="state" id="state" class="form-input mn-lef-1em">
+                                <option>admin</option>
+                                <option>tacoTest01</option>
+                              </select>
+                            </div>
+                            <div class="form-row">
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label class="money_style">起日</label>
+                                  <input type="datetime-local" id="meeting-time" name="meeting-time" value="2018-06-12T19:30" min="2018-06-07T00:00" max="2018-06-14T00:00"class="form-input mn-lef-1em">
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label class="money_style">訖日</label>
+                                  <input type="datetime-local" id="meeting-time" name="meeting-time" value="2018-06-12T19:30" min="2018-06-07T00:00" max="2018-06-14T00:00"class="form-input mn-lef-1em">
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label class="money_style">時區</label>
+                                  <select name="state" id="state" class="form-input mn-lef-1em">                                    
+                                    <option>UTC 8</option>
+                                    <option>UTC -8</option>
+                                    <option>UTC -7</option>
+                                    <option>UTC -6</option>
+                                    <option>UTC -5</option>
+                                    <option>UTC -4</option>
+                                    <option>UTC ...</option>
+                                    <option>UTC  12</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <a href="javascript:;"  class="btn btn-info">查詢</a>
+                      </form>
+                    </div>
+                  </div>
+                  <!--查詢項目搜尋列表-->
+
+                  <!--log表格含換頁 點擊查詢才打開-->
+                  <div class="card">
+                    <div class="card-header">
+                      <h5 class="card-title">局數細項</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="react-bootstrap-table">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th class="sortable">帳號</th>
+                              <th class="sortable">類別(上/下/領分/第三方金流)</th>
+                              <th class="sortable">分數(單筆)</th>
+                              <th class="sortable">贏分</th>
+                              <th class="sortable">時間</th>
+                              <th class="sortable">狀態</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Tiger Nixon</td>
+                              <td>System Architect</td>
+                              <td>120000</td>
+                              <td>System Architect</td>
+                              <td>2011/04/25</td>
+                              <td>上線</td>
+                            </tr>
+                            <tr>
+                              <td>Tiger Nixon</td>
+                              <td>System Architect</td>
+                              <td>120000</td>
+                              <td>System Architect</td>
+                              <td>2011/04/25</td>
+                              <td>上線</td>
+                            </tr>
+                            <tr>
+                              <td>Tiger Nixon</td>
+                              <td>System Architect</td>
+                              <td>120000</td>
+                              <td>System Architect</td>
+                              <td>2011/04/25</td>
+                              <td>上線</td>
+                            </tr>
+                            <tr>
+                              <td>Tiger Nixon</td>
+                              <td>System Architect</td>
+                              <td>120000</td>
+                              <td>System Architect</td>
+                              <td>2011/04/25</td>
+                              <td>上線</td>
+                            </tr>
+                            <tr>
+                              <td>Tiger Nixon</td>
+                              <td>System Architect</td>
+                              <td>120000</td>
+                              <td>System Architect</td>
+                              <td>2011/04/25</td>
+                              <td>上線</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div> 
+                  <!--log表格含換頁 點擊查詢才打開-->   
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--查帳-->
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

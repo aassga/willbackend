@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <link rel="icon" href="img/favicon_willy.png" type="image/x-icon">
+    <title>168 online_web後台系統</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="js/jquery.mloading.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/handler.js"></script>
+    <!-- <link rel="stylesheet" href="css/jquery.mloading.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <link href="/css/modern.css" rel="stylesheet">
+    <style>
+        #detail{
+            display: none;
+        }
+        .selected{
+            box-shadow: 0 0 0 0.2rem;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="splash">
+      <div class="splash-icon"></div>
+    </div>
+    <div id="root">
+      <div class="wrapper">
+        <nav class="sidebar">
+          <div class="sidebar-content">
+
+            <!--Logo以及後台名稱-->
+            <div class="sidebar-user">
+              <img alt="Linda Miller" class="img-fluid mb-2" src="./img/logo.png">
+              <div class="font-weight-bold">168 online_web 後台系統</div>
+              <hr>
+              <div>帳號：<span id="loginAccount"></span></div>
+              <div>金幣：<span id="loginMoney"></span></div>
+              <hr>
+              <input type="button" id="btnLogout" class="mr-1 mb-1 btn btn-outline-danger" value="登出">
+            </div>
+            <!--Logo以及後台名稱-->
+
+            <!--menu-->
+            <ul class="sidebar-nav">
+              <li class="sidebar-header">Menu</li>
+              <li class="sidebar-item bor-btm-c3">
+                <span class="sidebar-link" data-toggle="collapse" aria-expanded="ture">
+                  <img class="svg-inline--fa fa-book fa-w-14 fa-fw align-middle mr-2" src="./img/exchange-alt-solid.svg">
+                  <span class="align-middle fs-2rem menulist">遊戲商出入分</span>
+                </span>
+                <div class="collapse">
+                  <ul class="sidebar-dropdown list-unstyled" id="item">
+                    <li class="sidebar-item fs-2rem"><a class="sidebar-link" href="javascript:;">CG</a></li>
+                    <li class="sidebar-item fs-2rem"><a class="sidebar-link" href="javascript:;">Pachinko</a></li>
+                    <li class="sidebar-item fs-2rem"><a class="sidebar-link" href="javascript:;">PTS</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <span class="sidebar-link bor-btm-c3" data-toggle="collapse" aria-expanded="ture">
+                  <img class="svg-inline--fa fa-book fa-w-14 fa-fw align-middle mr-2" src="./img/coins-solid.svg">
+                  <span class="align-middle fs-2rem menulist">遊戲商營收</span>
+                </span>
+                <div class="collapse">
+                  <ul class="sidebar-dropdown list-unstyled" id="item">
+                    <li class="sidebar-item fs-2rem"><a class="sidebar-link" href="javascript:;">CG</a></li>
+                    <li class="sidebar-item fs-2rem"><a class="sidebar-link" href="javascript:;">Pachinko</a></li>
+                    <li class="sidebar-item fs-2rem"><a class="sidebar-link" href="javascript:;">PTS</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <span class="sidebar-link bor-btm-c3" data-toggle="collapse" aria-expanded="ture">
+                  <img class="svg-inline--fa fa-book fa-w-14 fa-fw align-middle mr-2" src="./img/clipboard-solid.svg">
+                  <span class="align-middle fs-2rem menulist">玩家記錄</span>
+                </span>
+                <div class="collapse">
+                  <ul class="sidebar-dropdown list-unstyled" id="item">
+                    <li class="sidebar-item fs-2rem active"><a class="sidebar-link text-primary" href="javascript:;">CG</a></li>
+                    <li class="sidebar-item fs-2rem"><a class="sidebar-link" href="javascript:;">Pachinko</a></li>
+                    <li class="sidebar-item fs-2rem"><a class="sidebar-link" href="javascript:;">PTS</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-item bor-btm-c3">
+                <a class="sidebar-link" href="javascript:;">
+                    <img class="svg-inline--fa fa-book fa-w-14 fa-fw align-middle mr-2" src="./img/user-circle-solid.svg">
+                    <span class="align-middle fs-2rem text-danger menulist">帳號查詢</span>
+                </a>
+              </li>
+            </ul>
+            <!--menu-->
+
+          </div>
+        </nav>
+        <div class="main">
+
+          <!--選單收合-->
+          <nav class="navbar-theme navbar navbar-expand margin-top">
+            <span class="sidebar-toggle d-flex mr-2"><i class="hamburger align-self-center"></i></span>
+          </nav>
+          <!--選單收合-->
+
+          <!--營收系統-->      
+          <div class="content">
+            <div class="container-fluid">
+              <div class="header">
+                <h1 class="header-title">帳號查詢</h1>
+              </div>
+              <div class="row">
+                <div class="col-md-9 col-xl-10">
+
+                  <!--營收搜尋選擇器-->
+                  <div class="card">
+                    <div class="card-body">
+                        <form method="post">
+                        <div class="row">
+                          <div class="col-md-6"> 
+                            <div class="form-group">
+                              <label class="money_style">身份</label>
+                              <select name="receive_account" id="state" class="form-input mn-lef-1em">
+                                <option value="櫃台">櫃台</option>
+                                <option value="員工">員工</option>
+                                <option value="玩家">玩家</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label class="money_style">關鍵字</label>
+                                  <input type="text" name="" class="form-input mn-lef-1em">
+                            </div>                      
+
+                          </div>
+                        </div>
+                        <input type="submit"  class="btn btn-info" value="查詢">
+                      </form>
+                      
+                    </div>
+                  </div>
+                  <!--營收搜尋選擇器-->
+
+                  <!--log表格含換頁 點擊查詢才打開-->
+                  <div class="card" id="detail" style="display: block;">
+                    <div class="card-header">
+                      <h5 class="card-title">帳號列表</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="react-bootstrap-table">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th class="sortable">帳號</th>
+                              <th class="sortable">分數</th>
+                            </tr>
+                          </thead>
+                          <tbody id="list">
+                            <tr>
+                              <td>willy_test_store</td>
+                              <td>12000000</td>
+                            </tr>
+                            <tr>
+                              <td>willy_test_emploee</td>
+                              <td>12000000</td>
+                            </tr>
+                            <tr>
+                              <td>willy_test_emploee</td>
+                              <td>12000000</td>
+                            </tr>
+                            <tr>
+                              <td>willy_test_emploee</td>
+                              <td>12000000</td>
+                            </tr>
+                            <tr>
+                              <td>willy_test_emploee</td>
+                              <td>12000000</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!--log表格含換頁 點擊查詢才打開-->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--營收系統-->
+
+        </div>
+      </div>
+    </div>
+      
+      <div class="modal fade" id="failModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">訊息</h5>
+              <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

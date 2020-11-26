@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <link rel="icon" href="img/favicon_willy.png" type="image/x-icon">
+    <title>168 online_web後台系統</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="js/jquery.mloading.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/handler.js"></script>
+    <script src="js/Revenue.js"></script>
+    <link rel="stylesheet" href="css/jquery.mloading.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <link href="/css/modern.css" rel="stylesheet">
+    <style>
+        #detail{
+            display: none;
+        }
+        .selected{
+            box-shadow: 0 0 0 0.2rem;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="splash">
+      <div class="splash-icon"></div>
+    </div>
+    <div id="root">
+      <div class="wrapper">
+        <nav class="sidebar">
+          <div class="sidebar-content">
+
+            <!--Logo以及後台名稱-->
+            <div class="sidebar-user">
+              <img alt="Linda Miller" class="img-fluid mb-2" src="./img/logo.png">
+              <div class="font-weight-bold">168 online_web 後台系統</div>
+              <hr>
+              <div>帳號：<span id="loginAccount"></span></div>
+              <div>金幣：<span id="loginMoney"></span></div>
+              <hr>
+              <input type="button" id="btnLogout" class="mr-1 mb-1 btn btn-outline-danger" value="登出">
+            </div>
+            <!--Logo以及後台名稱-->
+
+            <!--menu-->
+            <ul class="sidebar-nav">
+            </ul>
+            <!--menu-->
+
+          </div>
+        </nav>
+        <div class="main">
+
+          <!--選單收合-->
+          <nav class="navbar-theme navbar navbar-expand margin-top">
+            <span class="sidebar-toggle d-flex mr-2"><i class="hamburger align-self-center"></i></span>
+          </nav>
+          <!--選單收合-->
+
+          <!--營收系統-->      
+          <div class="content">
+            <div class="container-fluid">
+              <div class="header">
+                <h1 class="header-title">營收系統</h1>
+              </div>
+              <div class="row">
+                <div class="col-md-9 col-xl-10">
+
+                  <!--營收搜尋選擇器-->
+                  <div class="card">
+                    <div class="card-body">
+                        <form method="post">
+                        <div class="row">
+                          <div class="col-md-10"> 
+                            <div class="form-row">
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label class="money_style">起日</label>
+                                  <input type="text" name="start_time" class="form-input mn-lef-1em">
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label class="money_style">訖日</label>
+                                  <input type="text" name="end_time" class="form-input mn-lef-1em">
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label class="money_style">時區</label>
+                                  <select name="zone" class="form-input mn-lef-1em">
+                                    <option value="-11">UTC -11</option>
+                                    <option value="-10">UTC -10</option>
+                                    <option value="-9">UTC -9</option>
+                                    <option value="-8">UTC -8</option>
+                                    <option value="-7">UTC -7</option>
+                                    <option value="-6">UTC -6</option>
+                                    <option value="-5">UTC -5</option>
+                                    <option value="-4">UTC -4</option>
+                                    <option value="-3">UTC -3</option>
+                                    <option value="-2">UTC -2</option>
+                                    <option value="-1">UTC -1</option>
+                                    <option value="0" selected="selected">UTC +0</option>
+                                    <option value="1">UTC +1</option>
+                                    <option value="2">UTC +2</option>
+                                    <option value="3">UTC +3</option>
+                                    <option value="4">UTC +4</option>
+                                    <option value="5">UTC +5</option>
+                                    <option value="6">UTC +6</option>
+                                    <option value="7">UTC +7</option>
+                                    <option value="8">UTC +8</option>
+                                    <option value="9">UTC +9</option>
+                                    <option value="10">UTC +10</option>
+                                    <option value="11">UTC +11</option>
+                                    <option value="12">UTC +12</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                              <div class="form-group" id="unit">
+                              <label class="money_style">單位</label>
+                              <span class="mb-4 mn-lef-1em">
+                                <input type="button" class="mr-1 mb-1 btn btn-outline-primary selected" data-value="hour" value="時">
+                                <input type="button" class="mr-1 mb-1 btn btn-outline-secondary" data-value="daily" value="日">
+                                <input type="button" class="mr-1 mb-1 btn btn-outline-success" data-value="month" value="月">
+                                <input type="button" class="mr-1 mb-1 btn btn-outline-danger" data-value="year" value="年">
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <input type="submit"  class="btn btn-info" value="查詢">
+                      </form>
+                      
+                    </div>
+                  </div>
+                  <!--營收搜尋選擇器-->
+
+                  <!--log表格含換頁 點擊查詢才打開-->
+                  <div class="card" id="detail">
+                    <div class="card-header">
+                      <h5 class="card-title">營收細項</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="react-bootstrap-table">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th class="sortable">日期</th>
+                              <th class="sortable">櫃台發分</th>
+                              <th class="sortable">櫃台收分</th>
+                              <th class="sortable">營收</th>
+                            </tr>
+                          </thead>
+                          <tbody id="list">
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>                  
+                  <!--log表格含換頁 點擊查詢才打開-->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--營收系統-->
+
+        </div>
+      </div>
+    </div>
+      
+      <div class="modal fade" id="failModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">訊息</h5>
+              <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

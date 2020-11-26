@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <link rel="icon" href="./img/favicon_willy.png" type="image/x-icon">
+    <title>168 online_web後台系統</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery.mloading.js"></script>
+    <script src="js/notify.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/handler.js"></script>
+    <script src="js/login.js"></script>
+    <link rel="stylesheet" href="css/jquery.mloading.css">
+    <link href="css/modern.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script>
+        var menuText = {
+            '34': '上分系統',
+            '35': '下分系統',
+            '36': '上班上分',
+            '37': '下班結帳',
+            '38': '查帳',
+            '39': '修改密碼',
+            '40': '營收'
+        };
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="main h-100 w-100">
+        <div class="h-100 container">
+          <div class="h-100 row">
+            <div class="mx-auto d-table h-100 col-sm-10 col-md-8 col-lg-6">
+              <div class="d-table-cell align-middle">
+                <div class="text-center mt-4">
+                  <h2>登入帳號密碼</h2>
+                  <p class="lead">請輸入帳號密碼登入</p>
+                </div>
+                <div class="card">
+                  <div class="card-body">
+                    <div class="m-sm-4">
+                      <div class="text-center"><img src="./img/logo.png" alt="168 online_web" class="img-fluid" width="160" height="160"></div>
+                      <form method="post">
+                        <div class="form-group">
+                          <label class="">帳號</label>
+                          <input name="account" placeholder="請輸入帳號" type="text" class="form-control-lg form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                          <label class="">密碼</label>
+                          <input name="password" placeholder="請輸入密碼" type="password" class="form-control-lg form-control" required="required">
+                        </div>
+                        <div class="text-center mt-3">
+                            <input type="submit" class="btn btn-primary btn-lg" value="登入">
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
